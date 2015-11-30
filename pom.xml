@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>Hellojenkinsfromslim Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+ 
    <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -20,12 +20,12 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-           <dependency>
-        
-	<groupId>org.codehaus.sonar</groupId>
-	<artifactId>sonar-maven-plugin</artifactId>
-	<version>2.6</version>
-</dependency>
+	<dependency>
+
+		<groupId>org.codehaus.sonar</groupId>
+		<artifactId>sonar-maven-plugin</artifactId>
+		<version>2.6</version>
+	</dependency>
         
     </dependencies>
      <profiles>
@@ -38,11 +38,7 @@
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>1.0.1.Final</version>
-                <configuration>
-                     <jbossHome>E:/javaEE/JEE7ToolsEsprit/SERVER/wildfly-8.1.0.Final</jbossHome>
-                    <hostname>192.168.1.101</hostname>
-                    <port>10090</port>
-                </configuration>
+                
             </plugin>
         </plugins>
       </build>
@@ -53,24 +49,17 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <version>1.0.1.Final</version>
-                <configuration>
-                    <username>slim</username>
-                    <password>slimslim</password>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <name>nexus</name>
-            <url>http://192.168.1.102:8081/nexus/content/repositories/snapshots/</url>
-        </repository>
-  </distributionManagement>
+ 
+   <distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
