@@ -32,7 +32,6 @@
 </dependency>
 
 	<dependency>
-
 		<groupId>org.codehaus.sonar</groupId>
 		<artifactId>sonar-maven-plugin</artifactId>
 		<version>2.6</version>
